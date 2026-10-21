@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"inverse-on-surface":"#f0f0f6","primary":"#b00016","on-tertiary":"#ffffff","inverse-primary":"#ffb3ad","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#930011","surface-dim":"#d9dadf","surface-container-low":"#f3f3f9","outline":"#916f6b","on-surface":"#1a1c20","on-secondary-container":"#646468","on-tertiary-fixed-variant":"#93000d","surface-tint":"#c00019","surface-bright":"#f9f9fe","secondary-fixed":"#e3e2e6","on-secondary-fixed-variant":"#46464a","primary-fixed-dim":"#ffb3ad","primary-fixed":"#ffdad6","on-primary":"#ffffff","surface":"#f9f9fe","secondary-container":"#e3e2e6","background":"#f9f9fe","tertiary-container":"#db141f","tertiary-fixed-dim":"#ffb4ac","surface-container-highest":"#e2e2e7","tertiary-fixed":"#ffdad6","secondary-fixed-dim":"#c7c6ca","surface-variant":"#e2e2e7","on-error-container":"#93000a","tertiary":"#b00012","on-tertiary-container":"#ffefed","surface-container":"#ededf3","on-secondary-fixed":"#1b1b1f","inverse-surface":"#2e3035","outline-variant":"#e6bdb9","surface-container-high":"#e8e8ed","secondary":"#5e5e62","on-error":"#ffffff","primary-container":"#d81e27","error":"#ba1a1a","on-primary-fixed":"#410003","on-background":"#1a1c20","on-primary-container":"#ffefed","on-secondary":"#ffffff","error-container":"#ffdad6","on-surface-variant":"#5d3f3d","on-tertiary-fixed":"#410002"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.5rem","margin":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-mobile":"1rem","space-md":"1rem","gutter":"1.5rem","gutter-sm":"1rem","space-xl":"2.5rem"},"fontFamily":{"headline-xl":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"label-md":["Space Grotesk"],"body-md":["Hanken Grotesk"],"headline-sm":["Space Grotesk"],"body-sm":["Hanken Grotesk"],"display-hero":["Space Grotesk"],"headline-md":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"label-caps":["Space Grotesk"],"label-lg":["Space Grotesk"],"body-lg":["Hanken Grotesk"]},"fontSize":{"headline-xl":["44px",{"lineHeight":"52px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-hero":["64px",{"lineHeight":"72px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-hero-mobile":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}};</script><style>
+@media (max-width: 767px) {
+  .hero-media > img {
+    display: block;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-presentation {
+    position: static !important;
+    margin: 1rem 1rem 0;
+  }
+}
+
+.ticker-track {
+  width: max-content;
+  animation: ticker-scroll 28s linear infinite;
+}
+
+.ticker-group {
+  box-sizing: border-box;
+  flex: 0 0 max-content;
+  width: max-content;
+  min-width: 100vw;
+}
+
+@keyframes ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-title {
+    overflow-wrap: anywhere;
+  }
+}
+
+.countdown-panel {
+  align-items: stretch;
+}
+
+.countdown-heading {
+  max-width: 100%;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+.countdown-units {
+  width: 100%;
+  gap: clamp(0.4rem, 1.5vw, 1rem);
+}
+
+.countdown-unit {
+  min-width: 0;
+  padding: clamp(0.65rem, 1.5vw, 1rem) 0.35rem;
+}
+
+.countdown-value {
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+  letter-spacing: 0.04em;
+}
+
+.result-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.result-gallery {
+  max-width: 1200px;
+}
+
+.result-dialog {
+  width: min(96vw, 1200px);
+  max-width: none;
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.result-dialog::backdrop {
+  background: rgb(15 15 18 / 85%);
+}
+
+.result-dialog-image {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.testimonial-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.testimonial-dialog {
+  width: min(96vw, 1100px);
+  max-width: none;
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.testimonial-dialog::backdrop {
+  background: rgb(15 15 18 / 85%);
+}
+
+.testimonial-dialog-image {
+  display: block;
+  max-width: 100%;
+  max-height: 78vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .countdown-panel {
+    align-items: center;
+  }
+
+  .countdown-heading-block {
+    flex: 1 1 32%;
+  }
+
+  .countdown-units {
+    flex: 1 1 64%;
+  }
+}
+
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-frame-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style></head><body class="bg-surface font-body-md text-on-surface antialiased"><main class="w-full bg-surface min-h-[calc(100vh-180px)]"><div class="flex flex-col w-full">
+<!-- SECTION HERO : ESPACE PRIVÉ TCF ELITE -->
+<section class="relative w-full max-w-[1440px] mx-auto px-gutter py-space-xl lg:py-16">
+<div class="flex flex-col gap-8">
+<!-- Colonne Gauche : Contenu & Accompagnement -->
+<div class="w-full max-w-4xl mx-auto flex flex-col space-y-6">
+<!-- Badge Coach Spécialiste -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-fixed/60 text-primary w-fit shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">DIMITRI — COACH FORMATEUR TCF CANADA</span>
+</div>
+<!-- Titre Principal -->
+<h1 class="hero-title text-center font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight">
+          BIENVENUE DANS TON ESPACE PRIVÉ DE <span class="text-primary-container">PRÉPARATION AU TCF CANADA !</span>
+</h1>
+<div class="hero-media relative w-screen max-w-none left-1/2 -translate-x-1/2 overflow-hidden shadow-2xl bg-surface-container-lowest">
+<img class="w-full aspect-video object-cover object-center filter contrast-[1.05]" data-alt="Dimitri, coach formateur TCF Canada portant des lunettes rondes design noires et une veste blazer élégante, debout avec assurance les mains ouvertes sur fond d'écrans de candidats connectés en direct, éclairage studio professionnel ultra net et premium." src="./dimitri.png"/>
+<div class="absolute top-4 right-4 bg-inverse-surface/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-inverse-on-surface uppercase tracking-wider">4X C2 TCF VALIDÉS</span>
+</div>
+<div class="hero-presentation absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md p-4 rounded-xl shadow-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Dimitri · Fondateur TCF Elite</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-caps text-label-caps">OFFICIEL</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">4x C2 au TCF Canada · Des centaines de candidats accompagnés vers la réussite et l'immigration.</p>
+</div>
+</div>
+<!-- Texte d'introduction -->
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+          Tu viens de faire un premier pas vers une meilleure préparation au TCF Canada. Dans cet espace, tu vas découvrir des témoignages de candidats, des retours d'expérience et des preuves concrètes qui te permettront de mieux comprendre l'importance d'une préparation adaptée.
+        </p>
+<!-- Compte à Rebours Interactif Desktop -->
+<div class="countdown-panel bg-surface-container-low p-5 md:p-7 rounded-xl shadow-inner flex flex-col md:flex-row gap-5 md:gap-8">
+<div class="countdown-heading-block flex flex-col justify-center gap-2">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">PROCHAINE SESSION LIVE</span>
+<h2 class="countdown-heading font-headline-sm text-on-surface">Ce dimanche 25 octobre</h2>
+</div>
+<div class="countdown-units grid grid-cols-4 text-center" id="countdown-timer" role="timer" aria-label="Temps restant avant la prochaine session live">
+<div class="countdown-unit bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="countdown-value font-headline-md text-primary-container block" id="days-val">03</span>
+<span class="countdown-label font-label-caps text-secondary uppercase">Jours</span>
+</div>
+<div class="countdown-unit bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="countdown-value font-headline-md text-primary-container block" id="hours-val">14</span>
+<span class="countdown-label font-label-caps text-secondary uppercase">Heures</span>
+</div>
+<div class="countdown-unit bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="countdown-value font-headline-md text-primary-container block" id="mins-val">28</span>
+<span class="countdown-label font-label-caps text-secondary uppercase">Minutes</span>
+</div>
+<div class="countdown-unit bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="countdown-value font-headline-md text-primary-container block" id="secs-val">42</span>
+<span class="countdown-label font-label-caps text-secondary uppercase">Secondes</span>
+</div>
+</div>
+</div>
+<!-- CTA & Actions Primaires -->
+<div class="flex w-full items-center justify-between gap-2 pt-2 sm:gap-4">
+<a class="inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-lg bg-primary-container px-2 py-3 text-center text-xs text-on-primary shadow-[0_4px_14px_rgba(216,30,39,0.35)] transition-all hover:bg-primary hover:-translate-y-0.5 sm:gap-2 sm:px-4 sm:py-3.5 sm:text-sm sm:font-label-lg sm:text-label-lg" href="#temoignages">
+<span class="material-symbols-outlined text-[18px] sm:text-[20px]">groups</span>
+<span>DÉCOUVRIR LES TÉMOIGNAGES</span>
+</a>
+<a class="inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-lg bg-transparent px-2 py-3 text-center text-xs text-on-surface shadow-sm transition-all hover:bg-surface-container-high sm:gap-2 sm:px-4 sm:py-3.5 sm:text-sm sm:font-label-lg sm:text-label-lg" href="https://youtube.com/live/GJ6Yf33v0jM?feature=share">
+<span class="material-symbols-outlined text-primary-container text-[18px] sm:text-[20px]">login</span>
+<span>ACCÉDER À LA CONFÉRENCE</span>
+</a>
+</div>
+<!-- Pastilles Informatives Sous CTA -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-container text-[16px]">event_available</span>
+<span>Ce dimanche à 20h GMT+1</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-container text-[16px]">video_library</span>
+<span>8+ Vidéos Masterclass Incluses</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BANDEAU DE DÉFILEMENT TICKER (CANADIAN SCARLET) -->
+<div class="w-full bg-primary-container text-on-primary py-3 overflow-hidden shadow-md">
+<div class="ticker-track flex whitespace-nowrap font-label-lg text-label-lg uppercase tracking-widest font-bold">
+<div class="ticker-group inline-flex items-center justify-around gap-8 pr-8" role="img" aria-label="TCF Elite, TCF Canada, candidats, 4x C2, concours et immigration, espace privé">
+<span aria-hidden="true">TCF ELITE ✦ TCF CANADA ✦ CANDIDATS ✦ 4X C2 ✦ CONCOURS &amp; IMMIGRATION ✦ ESPACE PRIVÉ</span>
+<span aria-hidden="true">TCF ELITE ✦ TCF CANADA ✦ CANDIDATS ✦ 4X C2 ✦ CONCOURS &amp; IMMIGRATION ✦ ESPACE PRIVÉ</span>
+</div>
+<div class="ticker-group inline-flex items-center justify-around gap-8 pr-8" aria-hidden="true">
+<span>TCF ELITE ✦ TCF CANADA ✦ CANDIDATS ✦ 4X C2 ✦ CONCOURS &amp; IMMIGRATION ✦ ESPACE PRIVÉ</span>
+<span>TCF ELITE ✦ TCF CANADA ✦ CANDIDATS ✦ 4X C2 ✦ CONCOURS &amp; IMMIGRATION ✦ ESPACE PRIVÉ</span>
+</div>
+</div>
+</div>
+<!-- SECTION (01) PREMIÈRE MISSION -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter py-space-xl" id="premiere-mission">
+<div class="flex flex-col gap-2 mb-8">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">(01) ORDRE DE MISSION</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase text-center">PREMIÈRE MISSION DU CANDIDAT</h2>
+</div>
+<div class="w-full bg-surface-container-lowest rounded-2xl p-8 lg:p-10 shadow-lg relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary-container/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-6 max-w-2xl">
+<div class="w-16 h-16 rounded-2xl bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[32px]">link</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-label-caps text-label-caps uppercase">PRIORITÉ ABSOLUE</span>
+<span class="font-label-md text-label-md text-secondary">Accès Unique</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+            MISSION 01 : Lien de connexion aux lives
+          </h3>
+<p class="font-body-md text-body-md text-secondary">
+            Le lien direct pour rejoindre la conférence ce dimanche à 20h GMT+1. Ajoutez-le à vos favoris dès maintenant — il ne change pas et vous garantit un accès direct sans file d'attente.
+          </p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg shadow-[0_6px_20px_rgba(216,30,39,0.35)] hover:bg-primary transition-all" href="https://youtube.com/live/GJ6Yf33v0jM?feature=share">
+<span>Accéder au live</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION (02) MASTERCLASSES EXCLUSIVES -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter py-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div class="flex flex-col gap-2 max-w-3xl">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">(02) MASTERCLASS EXCLUSIVES</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase text-center">
+          La réussite au TCF Canada expliquée en détail par ceux qui sont passés par là
+        </h2>
+<p class="font-body-md text-body-md text-secondary">
+          Le TCF Canada est une étape décisive pour votre projet d'immigration. Après avoir accompagné des centaines de candidats, je vous explique pourquoi une préparation adaptée peut tout changer.
+        </p>
+</div>
+<div class="hidden md:flex items-center gap-2 text-primary font-label-lg text-label-lg">
+<span class="material-symbols-outlined">play_lesson</span>
+<span>Formation continue</span>
+</div>
+</div>
+<!-- Vidéo Vedette Plein Format -->
+<div class="w-full bg-surface-container-lowest rounded-2xl overflow-hidden shadow-xl mb-12 grid grid-cols-1 lg:grid-cols-12">
+<div class="lg:col-span-7 relative min-h-[380px] bg-inverse-surface flex items-center justify-center group cursor-pointer">
+<iframe class="absolute inset-0 h-full w-full border-0" src="https://www.youtube-nocookie.com/embed/RwSzyClh88M" title="Introduction" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="lg:col-span-5 p-8 lg:p-10 flex flex-col justify-between bg-surface-container-lowest">
+<div class="flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-on-primary w-fit font-label-caps text-label-caps uppercase">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+<span>À VOIR EN PRIORITÉ : URGENT</span>
+</div>
+<h3 class="font-headline-xl text-headline-xl text-on-surface uppercase">
+            INTRODUCTION
+          </h3>
+<p class="font-headline-sm text-headline-sm text-secondary">
+            La première vidéo à voir avant la conférence de ce dimanche à 20h GMT+1.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Dans ce module de cadrage, découvrez la feuille de route exacte pour franchir le palier du C1/C2 sans gaspiller vos tentatives d'examen.
+          </p>
+</div>
+</div>
+</div>
+<!-- Grille des Vidéos & Études de Cas -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Carte Vidéo 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+<div class="video-frame bg-inverse-surface">
+<iframe class="video-frame-player" src="https://www.youtube-nocookie.com/embed/agQv8zkYa3M" title="Témoignage vidéo 1 : Enseignant accompagné pour le TCF Canada" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">ÉTUDE DE CAS #1</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 line-clamp-2">
+              Enseignant, mais il a choisi de se faire accompagner pour le TCF Canada, voici pourquoi.
+            </h4>
+</div>
+<div class="pt-4 flex items-center justify-between text-secondary font-label-md text-label-md">
+<span>Module Pédagogique</span>
+</div>
+</div>
+</div>
+<!-- Carte Vidéo 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+<div class="video-frame bg-inverse-surface">
+<iframe class="video-frame-player" src="https://www.youtube-nocookie.com/embed/aCGa3E13Dfk" title="Témoignage vidéo 2 : Parcours TCF Canada" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">RÉSULTAT MAJEUR</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 line-clamp-2">
+              Anglophone, elle obtient 4 C2 au TCF Canada, découvrez son parcours.
+            </h4>
+</div>
+<div class="pt-4 flex items-center justify-between text-secondary font-label-md text-label-md">
+<span>Compréhension &amp; Expression</span>
+</div>
+</div>
+</div>
+<!-- Carte Vidéo 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+<div class="video-frame bg-inverse-surface">
+<iframe class="video-frame-player" src="https://www.youtube-nocookie.com/embed/Jry1rHudBU0" title="Témoignage vidéo 3 : Parcours TCF Canada" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">RÉSILIENCE</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 line-clamp-2">
+              2 tentatives au TCF Canada sans succès : ce qui a changé à la 3ème.
+            </h4>
+</div>
+<div class="pt-4 flex items-center justify-between text-secondary font-label-md text-label-md">
+<span>Stratégie Déblocage</span>
+</div>
+</div>
+</div>
+<!-- Carte Vidéo 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+<div class="video-frame bg-inverse-surface">
+<iframe class="video-frame-player" src="https://www.youtube-nocookie.com/embed/GxaBNI_QroM" title="Témoignage vidéo 4 : Parcours TCF Canada" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">MÉTHODOLOGIE</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 line-clamp-2">
+              Il a suivi ma conférence TCF Canada, tenté sa chance seul, puis a changé de stratégie.
+            </h4>
+</div>
+<div class="pt-4 flex items-center justify-between text-secondary font-label-md text-label-md">
+<span>Retour d'Expérience</span>
+</div>
+</div>
+</div>
+<!-- Carte Vidéo 5 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+<div class="video-frame bg-inverse-surface">
+<iframe class="video-frame-player" src="https://www.youtube-nocookie.com/embed/ovK5NMif2bA" title="Témoignage vidéo 5 : Parcours TCF Canada" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">ANALYSE D'ERREUR</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 line-clamp-2">
+              Elle a passé le TCF sans préparation : voici la leçon qu'elle a tirée.
+            </h4>
+</div>
+<div class="pt-4 flex items-center justify-between text-secondary font-label-md text-label-md">
+<span>Conseils Pratiques</span>
+</div>
+</div>
+</div>
+<!-- Carte Vidéo 6 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+<div class="video-frame bg-inverse-surface">
+<iframe class="video-frame-player" src="https://www.youtube-nocookie.com/embed/EhUZVeVlKHw" title="Témoignage vidéo 6 : Parcours TCF Canada" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">SUCCÈS COLLECTIF</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 line-clamp-2">
+              4 C2 au TCF Canada : plusieurs candidats racontent comment ils se sont préparés.
+            </h4>
+</div>
+<div class="pt-4 flex items-center justify-between text-secondary font-label-md text-label-md">
+<span>Récit Immersion</span>
+</div>
+</div>
+</div>
+<!-- Carte Vidéo 7 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+<div class="video-frame bg-inverse-surface">
+<iframe class="video-frame-player" src="https://www.youtube-nocookie.com/embed/VqSd1APTOfw" title="Après 2 échecs au TEF Canada, elle décroche 4C au TCF Canada !" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="p-6 flex flex-col justify-between flex-grow">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-1 break-words">
+              Après 2 échecs au TEF Canada, elle décroche 4C au TCF Canada !
+            </h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Carte Banner YouTube Ressource -->
+<div class="mt-8 bg-inverse-surface text-inverse-on-surface rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-lg">
+<span class="material-symbols-outlined text-[32px]">smart_display</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider font-bold">DÉCOUVRIR PLUS DE CONTENU</span>
+<h3 class="font-headline-md text-headline-md text-inverse-on-surface">
+            Retrouvez les témoignages et vidéos de préparation directement dans votre espace.
+          </h3>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION (03) CE QUE DISENT MES CLIENTS DE MOI -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter py-space-xl bg-surface-container-low rounded-3xl my-8" id="temoignages">
+<div class="flex flex-col gap-2 mb-10 max-w-3xl">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">(03) ILS EN PARLENT</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase text-center">
+        Ce que disent mes clients de moi
+      </h2>
+<p class="font-body-md text-body-md text-secondary">
+        Écoutez les témoignages audio directement sur cette page.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6" id="audio-testimonial-gallery">
+</div>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="testimonial-image-gallery" aria-label="Images associées aux témoignages audio"></div>
+<dialog class="testimonial-dialog rounded-xl shadow-2xl" id="testimonial-dialog" aria-label="Agrandissement de l’image de témoignage">
+<div class="relative rounded-xl bg-surface-container-lowest p-3 pt-14 sm:p-5 sm:pt-14">
+<button class="absolute right-3 top-3 z-10 rounded-full bg-inverse-surface px-3 py-2 text-sm font-bold text-inverse-on-surface" type="button" data-close-testimonial aria-label="Fermer l’image agrandie">Fermer ✕</button>
+<img class="testimonial-dialog-image rounded-lg" alt="" id="testimonial-dialog-image"/>
+<p class="hidden mt-3 text-center text-sm text-secondary" id="testimonial-dialog-error" role="status">Image momentanément indisponible.</p>
+</div>
+</dialog>
+</section>
+<!-- SECTION (04) GALERIE DE PREUVES -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter py-space-xl">
+<div class="flex flex-col gap-2 mb-10 max-w-3xl">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">(04) GALERIE DE PREUVES</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase text-center">
+        DES RÉSULTATS, PAS DES PROMESSES
+      </h2>
+<p class="font-body-md text-body-md text-secondary">
+        Cliquez sur une capture pour la consulter en grand, sans altérer ses proportions.
+      </p>
+</div>
+<div class="result-gallery mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" id="result-gallery" aria-live="polite"></div>
+<dialog class="result-dialog rounded-xl shadow-2xl" id="result-dialog" aria-label="Agrandissement de la capture de résultat">
+<div class="relative rounded-xl bg-surface-container-lowest p-3 pt-14 sm:p-5 sm:pt-14">
+<button class="absolute right-3 top-3 z-10 rounded-full bg-inverse-surface px-3 py-2 text-sm font-bold text-inverse-on-surface" type="button" data-close-result aria-label="Fermer l’image agrandie">Fermer ✕</button>
+<button class="absolute left-3 top-3 z-10 rounded-full bg-inverse-surface px-3 py-2 text-sm font-bold text-inverse-on-surface disabled:opacity-40" type="button" data-previous-result aria-label="Afficher l’image précédente">←<span class="hidden sm:inline"> Précédente</span></button>
+<button class="absolute left-1/2 top-3 z-10 -translate-x-1/2 rounded-full bg-inverse-surface px-3 py-2 text-sm font-bold text-inverse-on-surface disabled:opacity-40" type="button" data-next-result aria-label="Afficher l’image suivante"><span class="hidden sm:inline">Suivante </span>→</button>
+<img class="result-dialog-image rounded-lg" alt="" id="result-dialog-image"/>
+<p class="hidden mt-3 text-center text-sm text-secondary" id="result-dialog-error" role="status">Image momentanément indisponible.</p>
+<p class="mt-3 text-center text-sm text-secondary" id="result-dialog-caption"></p>
+<p class="mt-2 text-center text-sm text-secondary" id="result-dialog-position" aria-live="polite"></p>
+</div>
+</dialog>
+</section>
+<!-- SECTION (05) VOTRE PLAN DE VOL -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter py-space-xl">
+<div class="flex flex-col gap-2 mb-10 max-w-3xl">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">(05) PROTOCOLE</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase text-center">
+        Votre plan de vol
+      </h2>
+<p class="font-body-md text-body-md text-secondary">
+        Deux étapes claires. Aucune improvisation.
+      </p>
+</div>
+<!-- Timeline Horizontale 2 Étapes -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+<!-- Étape 01 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm relative flex flex-col justify-between">
+<div class="flex items-start gap-5">
+<div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary flex items-center justify-center font-headline-md font-bold flex-shrink-0">
+            01
+          </div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">AVANT LA SESSION · J-3</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+              Regardez vos vidéos bonus
+            </h3>
+<p class="font-body-md text-body-md text-secondary">
+              Suivez la playlist dans l'ordre pour arriver aligné et préparé. Ces modules vous donnent le vocabulaire de base et la structure requise pour profiter à 100% de la conférence.
+            </p>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-secondary font-label-md text-label-md">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Durée : ~45 min</span>
+<span class="text-primary font-bold">Recommandé</span>
+</div>
+</div>
+<!-- Étape 02 -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm relative flex flex-col justify-between">
+<div class="flex items-start gap-5">
+<div class="w-14 h-14 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-headline-md font-bold flex-shrink-0 shadow-md">
+            02
+          </div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">JOUR J · 20H GMT+1</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+              Connectez-vous à la conférence
+            </h3>
+<p class="font-body-md text-body-md text-secondary">
+              Actif, présent, avec le carnet ouvert. Le vrai travail commence. Dimitri dévoilera la stratégie intégrale et répondra à toutes les interrogations des candidats en direct.
+            </p>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-secondary font-label-md text-label-md">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary-container text-[18px]">lock_open</span> En direct &amp; interactif</span>
+<span class="text-primary-container font-bold">Accès Garanti</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BANNIÈRE FINALE D'APPEL À L'ACTION (06) LE RENDEZ-VOUS -->
+<section class="w-full max-w-[1440px] mx-auto px-gutter pb-space-xl pt-8">
+<div class="relative bg-inverse-surface text-inverse-on-surface rounded-3xl p-10 lg:p-14 overflow-hidden shadow-2xl flex flex-col items-center text-center">
+<!-- Glow & Ambiance Rouge -->
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center max-w-2xl gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-caps text-label-caps uppercase tracking-wider">
+<span>(06) LE RENDEZ-VOUS</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-inverse-on-surface uppercase text-center">
+          PRÊT POUR LA CONFÉRENCE ?
+        </h2>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-xl">
+          Tout est déjà à votre disposition. Il ne reste qu'à agir. Connectez-vous au live, et venez avec vos questions.
+        </p>
+<div class="pt-4 flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm shadow-[0_8px_25px_rgba(216,30,39,0.5)] hover:bg-primary transition-all" href="https://youtube.com/live/GJ6Yf33v0jM?feature=share">
+<span class="material-symbols-outlined text-[24px]">videocam</span>
+<span>Lien du live</span>
+</a>
+</div>
+<span class="text-xs text-secondary mt-2">
+          Rappel automatique envoyé par courriel 15 minutes avant le lancement
+        </span>
+</div>
+</div>
+</section>
+<!-- Données et rendu des témoignages audio et de la galerie de résultats -->
+<script>
+    const audioTestimonials = [
+      { title: 'Témoignage audio 1', url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1dd4222495_WhatsAppPtt2026-01-10at22.09.53.ogg' },
+      { title: 'Témoignage audio 2', url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1dd64c6606_WhatsAppPtt2026-01-06at14.26.53.ogg' },
+      { title: 'Témoignage audio 3', url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1dd859e374_WhatsAppAudio2026-01-06at11.42.50.ogg' },
+      { title: 'Témoignage audio 4', url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1dda5ca058_WhatsAppAudio2026-01-06at11.35.32.ogg' },
+      { title: 'Témoignage audio 5', url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1ddb59e24f_WhatsAppAudio2026-01-06at11.32.45.ogg' }
+    ];
+
+    const testimonialImages = [
+      'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad355e49d5b87.65531143_WhatsAppImage2026-10-10at11.42.44.jpeg',
+      'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad355f5a15ec5.88844059_WhatsAppImage2026-10-10at11.42.45.jpeg',
+      'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad3561dba8466.24905574_WhatsAppImage2026-10-10at11.42.46.jpeg'
+    ];
+
+    const resultImages = [
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1dfdfc83f7_WhatsAppImage2026-01-06at10.43.59.jpeg', alt: 'Capture de résultat de candidat, image 1 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e02a4fde3_WhatsAppImage2026-01-06at10.43.28.jpeg', alt: 'Capture de résultat de candidat, image 2 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e36eb327a_WhatsAppImage2026-01-06at10.41.28.jpeg', alt: 'Capture de résultat de candidat, image 3 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e383c8d79_WhatsAppImage2026-01-06at10.39.35.jpeg', alt: 'Capture de résultat de candidat, image 4 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e3bad6341_WhatsAppImage2026-01-06at10.38.09.jpeg', alt: 'Capture de résultat de candidat, image 5 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e3eb03dd0_WhatsAppImage2026-01-06at10.34.45.jpeg', alt: 'Capture de résultat de candidat, image 6 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e40ba977c_WhatsAppImage2026-01-06at10.24.29.jpeg', alt: 'Capture de résultat de candidat, image 7 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e419b189c_WhatsAppImage2026-01-06at10.26.10.jpeg', alt: 'Capture de résultat de candidat, image 8 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e66dd452b_WhatsAppImage2026-01-06at10.28.22.jpeg', alt: 'Capture de résultat de candidat, image 9 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e65c8af4d_WhatsAppImage2026-01-06at10.26.49.jpeg', alt: 'Capture de résultat de candidat, image 10 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e69ceba5c_WhatsAppImage2026-01-06at10.33.08.jpeg', alt: 'Capture de résultat de candidat, image 11 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/69a1e6c64a58a_WhatsAppImage2026-01-06at10.38.09.jpeg', alt: 'Capture de résultat de candidat, image 12 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad0d719ed97e9.60124676_WhatsAppImage2026-10-15at15.35.17.jpeg', alt: 'Capture de résultat de candidat, image 13 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad0d72fd9b717.08053445_WhatsAppImage2026-10-15at15.35.01.jpeg', alt: 'Capture de résultat de candidat, image 14 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad0d75c7679b8.31584538_WhatsAppImage2026-10-15at15.34.41.jpeg', alt: 'Capture de résultat de candidat, image 15 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad0d77500d444.87085847_WhatsAppImage2026-10-15at15.34.09.jpeg', alt: 'Capture de résultat de candidat, image 16 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad0d7a1d6d471.62110298_WhatsAppImage2026-10-15at15.33.50.jpeg', alt: 'Capture de résultat de candidat, image 17 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad0d7bbb5ed47.66338602_WhatsAppImage2026-10-09at17.40.49.jpeg', alt: 'Capture de résultat de candidat, image 18 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad0fc7ecff121.89143037_WhatsAppImage2026-10-15at18.12.37.jpeg', alt: 'Capture de résultat de candidat, image 19 sur 20' },
+      { url: 'https://d1yei2z3i6k35z.cloudfront.net/15743126/6ad0fc9611c033.48685308_WhatsAppImage2026-10-15at18.12.08.jpeg', alt: 'Capture de résultat de candidat, image 20 sur 20' }
+    ];
+
+    const audioGallery = document.getElementById('audio-testimonial-gallery');
+    const testimonialImageGallery = document.getElementById('testimonial-image-gallery');
+    const testimonialDialog = document.getElementById('testimonial-dialog');
+    const testimonialDialogImage = document.getElementById('testimonial-dialog-image');
+    const testimonialDialogError = document.getElementById('testimonial-dialog-error');
+    const resultGallery = document.getElementById('result-gallery');
+    const resultDialog = document.getElementById('result-dialog');
+    const resultDialogImage = document.getElementById('result-dialog-image');
+    const resultDialogCaption = document.getElementById('result-dialog-caption');
+    const resultDialogError = document.getElementById('result-dialog-error');
+    const resultDialogPosition = document.getElementById('result-dialog-position');
+    const previousResultButton = document.querySelector('[data-previous-result]');
+    const nextResultButton = document.querySelector('[data-next-result]');
+    let currentResultIndex = 0;
+
+    if (audioGallery) {
+      audioTestimonials.forEach((testimonial) => {
+        const card = document.createElement('article');
+        card.className = 'bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:-translate-y-1 transition-all duration-200 flex flex-col gap-4';
+
+        const title = document.createElement('h3');
+        title.className = 'font-headline-sm text-headline-sm text-on-surface';
+        title.textContent = testimonial.title;
+
+        const player = document.createElement('audio');
+        player.controls = true;
+        player.preload = 'none';
+        player.className = 'w-full';
+        player.setAttribute('aria-label', `Écouter ${testimonial.title}`);
+        const source = document.createElement('source');
+        source.src = testimonial.url;
+        source.type = 'audio/ogg';
+        player.append(source);
+
+        const status = document.createElement('p');
+        status.className = 'hidden text-sm text-secondary';
+        status.setAttribute('role', 'status');
+        status.textContent = 'Ce fichier audio est momentanément indisponible dans le lecteur.';
+        player.addEventListener('error', () => {
+          status.textContent = 'Ce fichier audio est momentanément indisponible dans le lecteur.';
+          status.classList.remove('hidden');
+        });
+        if (!player.canPlayType('audio/ogg')) {
+          status.textContent = 'Ce navigateur ne prend pas en charge le format audio OGG.';
+          status.classList.remove('hidden');
+        }
+
+        card.append(title, player, status);
+        audioGallery.append(card);
+      });
+    }
+
+    if (testimonialImageGallery) {
+      testimonialImages.forEach((url, index) => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'w-full overflow-hidden rounded-xl bg-surface-container-lowest p-3 text-left shadow-md transition-shadow hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-container';
+        card.setAttribute('aria-label', `Agrandir l’image de témoignage ${index + 1}`);
+
+        const preview = document.createElement('img');
+        preview.className = 'testimonial-image rounded-lg bg-surface-container-high';
+        preview.src = url;
+        preview.alt = `Image de témoignage ${index + 1}`;
+        preview.loading = 'lazy';
+        preview.decoding = 'async';
+
+        const unavailable = document.createElement('span');
+        unavailable.className = 'hidden flex min-h-48 items-center justify-center rounded-lg bg-surface-container-high p-4 text-center text-sm text-secondary';
+        unavailable.textContent = 'Image momentanément indisponible.';
+        preview.addEventListener('error', () => {
+          preview.classList.add('hidden');
+          unavailable.classList.remove('hidden');
+          card.disabled = true;
+        });
+        card.addEventListener('click', () => {
+          if (!testimonialDialog || !testimonialDialogImage) return;
+          testimonialDialogImage.classList.add('hidden');
+          testimonialDialogError?.classList.add('hidden');
+          testimonialDialogImage.src = url;
+          testimonialDialogImage.alt = preview.alt;
+          testimonialDialog.showModal();
+        });
+        card.append(preview, unavailable);
+        testimonialImageGallery.append(card);
+      });
+    }
+
+    testimonialDialogImage?.addEventListener('load', () => testimonialDialogImage.classList.remove('hidden'));
+    testimonialDialogImage?.addEventListener('error', () => {
+      testimonialDialogImage.classList.add('hidden');
+      testimonialDialogError?.classList.remove('hidden');
+    });
+    document.querySelector('[data-close-testimonial]')?.addEventListener('click', () => testimonialDialog?.close());
+    testimonialDialog?.addEventListener('click', (event) => {
+      if (event.target === testimonialDialog) testimonialDialog.close();
+    });
+
+    function showResultImage(index) {
+      if (!resultDialog || !resultDialogImage || !resultDialogCaption) return;
+      currentResultIndex = (index + resultImages.length) % resultImages.length;
+      const image = resultImages[currentResultIndex];
+      resultDialogImage.src = image.url;
+      resultDialogImage.alt = image.alt;
+      resultDialogCaption.textContent = image.caption || '';
+      if (resultDialogPosition) resultDialogPosition.textContent = `${currentResultIndex + 1} / ${resultImages.length}`;
+      if (resultDialogError) resultDialogError.classList.add('hidden');
+      if (previousResultButton) previousResultButton.disabled = resultImages.length < 2;
+      if (nextResultButton) nextResultButton.disabled = resultImages.length < 2;
+      resultDialog.showModal();
+    }
+
+    if (resultGallery) {
+      resultGallery.replaceChildren();
+
+      resultImages.forEach((image, index) => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'w-full overflow-hidden rounded-xl bg-surface-container-lowest p-3 text-left shadow-md transition-shadow hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-container';
+        card.setAttribute('aria-label', `Agrandir la capture ${index + 1} sur ${resultImages.length}`);
+
+        const preview = document.createElement('img');
+        preview.className = 'result-image rounded-lg bg-surface-container-high';
+        preview.src = image.url;
+        preview.alt = image.alt;
+        preview.loading = 'lazy';
+        const unavailable = document.createElement('span');
+        unavailable.className = 'hidden flex result-image items-center justify-center rounded-lg bg-surface-container-high p-4 text-center text-sm text-secondary';
+        unavailable.textContent = 'Image momentanément indisponible.';
+        preview.addEventListener('error', () => {
+          preview.classList.add('hidden');
+          unavailable.classList.remove('hidden');
+          card.disabled = true;
+        });
+        card.addEventListener('click', () => showResultImage(index));
+        card.append(preview);
+        card.append(unavailable);
+
+        if (image.caption) {
+          const caption = document.createElement('span');
+          caption.className = 'mt-3 block font-body-sm text-body-sm text-on-surface';
+          caption.textContent = image.caption;
+          card.append(caption);
+        }
+
+        resultGallery.append(card);
+      });
+    }
+
+    resultDialogImage?.addEventListener('error', () => {
+      resultDialogImage.classList.add('hidden');
+      if (resultDialogError) resultDialogError.classList.remove('hidden');
+    });
+    resultDialogImage?.addEventListener('load', () => resultDialogImage.classList.remove('hidden'));
+    previousResultButton?.addEventListener('click', () => showResultImage(currentResultIndex - 1));
+    nextResultButton?.addEventListener('click', () => showResultImage(currentResultIndex + 1));
+    resultDialog?.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') showResultImage(currentResultIndex - 1);
+      if (event.key === 'ArrowRight') showResultImage(currentResultIndex + 1);
+    });
+    document.querySelector('[data-close-result]')?.addEventListener('click', () => resultDialog?.close());
+    resultDialog?.addEventListener('click', (event) => {
+      if (event.target === resultDialog) resultDialog.close();
+    });
+  </script>
+<!-- Script Compte à Rebours Dynamique -->
+<script>
+    (function initCountdown() {
+      const targetDate = Date.UTC(2026, 9, 25, 19, 0, 0);
+      const timer = document.getElementById('countdown-timer');
+      let intervalId;
+
+      function updateTimer() {
+        const difference = targetDate - Date.now();
+
+        if (difference <= 0) {
+          if (timer) timer.innerHTML = '<span class="col-span-4">La conférence est en cours ou terminée.</span>';
+          if (intervalId) clearInterval(intervalId);
+          return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((difference % (1000 * 60)) / 1000);
+
+        const values = [days, hours, mins, secs];
+        ['days-val', 'hours-val', 'mins-val', 'secs-val'].forEach((id, index) => {
+          const valueElement = document.getElementById(id);
+          if (valueElement) valueElement.textContent = String(values[index]).padStart(2, '0');
+        });
+      }
+
+      updateTimer();
+      if (Date.now() < targetDate) intervalId = setInterval(updateTimer, 1000);
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1440px] mx-auto px-gutter py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start gap-space-xs"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface uppercase">TCF <span class="text-primary-container">ELITE</span></span><div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase"><span class="material-symbols-outlined text-primary-container text-[14px]">schedule</span><span>Ce dimanche à 20h GMT+1</span></div></div><p class="font-body-sm text-body-sm text-on-surface-variant">© 2026 TCF ELITE — ESPACE PRIVÉ DES CANDIDATS · Dimitri Coach TCF Canada</p></div><nav class="flex flex-wrap items-center justify-center gap-space-lg font-label-lg text-label-lg text-on-surface-variant"><a class="hover:text-primary-container transition-colors" data-path="support-vip" href="#">Support VIP</a><a class="hover:text-primary-container transition-colors" data-path="mentions-legales" href="#">Mentions Légales</a><a class="hover:text-primary-container transition-colors" data-path="ressources-tcf-canada" href="#">Ressources TCF Canada</a></nav></div></footer></body></html>
